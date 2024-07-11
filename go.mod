@@ -1,4 +1,4 @@
-module pog
+module github.com/Tyuzu/pog
 
 go 1.21
 
