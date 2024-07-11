@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func Cook() []byte {
+func Cook() string {
 	res, err := http.Get("http://www.google.com/robots.txt")
 	if err != nil {
 		log.Fatal(err)
@@ -19,5 +19,5 @@ func Cook() []byte {
 	if err != nil {
 		log.Fatal(err)
 	}
-	return body
+	return string(body)
 }
