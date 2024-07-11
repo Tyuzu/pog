@@ -1,13 +1,12 @@
 package cookies
 
 import (
-	"fmt"
 	"io"
 	"log"
 	"net/http"
 )
 
-func Cook() string {
+func Cook() []byte {
 	res, err := http.Get("http://www.google.com/robots.txt")
 	if err != nil {
 		log.Fatal(err)
