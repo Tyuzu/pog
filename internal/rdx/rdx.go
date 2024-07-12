@@ -11,12 +11,7 @@ import (
 )
 
 var redis_url = os.Getenv("REDIS_URL")
-
-self()
-func self() {
-	godotenv.Load()
-}
-
+var _ = godotenv.Load()
 var conn = redis.NewClient(&redis.Options{
         Addr:     redis_url,
         Password: os.Getenv("REDIS_PASSWORD"), // no password set
