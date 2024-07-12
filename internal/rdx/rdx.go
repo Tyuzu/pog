@@ -10,6 +10,7 @@ import (
     "github.com/joho/godotenv"
 )
 
+godotenv.Load()
 var redis_url = os.Getenv("REDIS_URL")
 
 var conn = redis.NewClient(&redis.Options{
@@ -18,14 +19,6 @@ var conn = redis.NewClient(&redis.Options{
         DB:       0,  // use default DB
     })
 
-
-func init() {
-  err := godotenv.Load()
-  if err != nil {
-    log.Fatal("Error loading .env file")
-  }
-
-}
 
 func RdxSet(key, value string) error {
 
