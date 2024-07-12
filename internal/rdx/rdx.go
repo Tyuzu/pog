@@ -10,8 +10,12 @@ import (
     "github.com/joho/godotenv"
 )
 
-godotenv.Load()
 var redis_url = os.Getenv("REDIS_URL")
+
+self()
+func self() {
+	godotenv.Load()
+}
 
 var conn = redis.NewClient(&redis.Options{
         Addr:     redis_url,
