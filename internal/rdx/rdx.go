@@ -1,4 +1,4 @@
-package rdx
+package Rdx
 
 import (
 	"context"
@@ -27,7 +27,7 @@ func init() {
 
 }
 
-func rdxSet(key, value string) error {
+func RdxSet(key, value string) error {
 
 	ctx := context.Background()
 
@@ -40,7 +40,7 @@ func rdxSet(key, value string) error {
 
 }
 
-func rdxGet(key string) (string, error) {
+func RdxGet(key string) (string, error) {
 
 	ctx := context.Background()
 
@@ -53,7 +53,7 @@ func rdxGet(key string) (string, error) {
 }
 
 
-func rdxDel(key string) (string, error) {
+func RdxDel(key string) (string, error) {
 
 	ctx := context.Background()
 
@@ -65,7 +65,7 @@ func rdxDel(key string) (string, error) {
 	return ""+string(value), err
 }
 
-func rdxHset(hash, key, value string) error {
+func RdxHset(hash, key, value string) error {
 
 	ctx := context.Background()
 
@@ -77,7 +77,7 @@ func rdxHset(hash, key, value string) error {
 	return err
 }
 
-func rdxHget(hash, key string) (string, error) {
+func RdxHget(hash, key string) (string, error) {
 
 	ctx := context.Background()
 
@@ -90,7 +90,7 @@ func rdxHget(hash, key string) (string, error) {
 
 }
 
-func rdxHdel(hash, key string) (string, error) {
+func RdxHdel(hash, key string) (string, error) {
 
 	ctx := context.Background()
 
@@ -103,7 +103,7 @@ func rdxHdel(hash, key string) (string, error) {
 
 }
 
-func rdxHgetall(hash string) map[string]string {
+func RdxHgetall(hash string) map[string]string {
 
 	ctx := context.Background()
 	value, _ := conn.HGetAll(ctx, hash).Result()
@@ -113,7 +113,7 @@ func rdxHgetall(hash string) map[string]string {
 }
 
 
-func rdxAppend(key, value string) error {
+func RdxAppend(key, value string) error {
 	ctx := context.Background()
 	_, err := conn.Append(ctx, key, value).Result()
 	if err != nil {
