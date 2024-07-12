@@ -8,7 +8,7 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	rdx.RdxSet("hola","amigos")
-	hola := rdx.RdxGet("hola")
+	hola,_ := rdx.RdxGet("hola")
   return &events.APIGatewayProxyResponse{
     StatusCode:        200,
     Body:              hola,
