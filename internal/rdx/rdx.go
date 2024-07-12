@@ -11,13 +11,13 @@ import (
 )
 
 var redis_url = os.Getenv("REDIS_URL")
-var _ = godotenv.Load()
 var conn = redis.NewClient(&redis.Options{
         Addr:     redis_url,
         Password: os.Getenv("REDIS_PASSWORD"), // no password set
         DB:       0,  // use default DB
     })
 
+func InitRedis() { godotenv.Load()}
 
 func RdxSet(key, value string) error {
 
