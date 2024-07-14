@@ -9,7 +9,7 @@ import (
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	Rdx.InitRedis()
 	Rdx.RdxSet("hola","amigos")
-	hola := Rdx.RdxGet("hola")
+	hola, _ := Rdx.RdxGet("hola")
   return &events.APIGatewayProxyResponse{
     StatusCode:        200,
     Body:              hola,
