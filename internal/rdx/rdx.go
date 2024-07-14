@@ -3,7 +3,6 @@ package Rdx
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
 
 	"github.com/redis/go-redis/v9"
