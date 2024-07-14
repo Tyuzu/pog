@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link  loading="lazy" rel="stylesheet" href="/static/main.css">      
+		<!--meta name="twitter:card" content="player"/>
+      <meta name="twitter:player" content="https://i.imgur.com/rofHxTb.gifv?twitter#t"/>
+      <meta name="twitter:player:width" content="600"/>
+      <meta name="twitter:player:height" content="854"/>
+      <meta name="twitter:player:stream" data-react-helmet="true" content="https://i.imgur.com/rofHxTb.mp4">
+      <meta name="twitter:player:stream:content_type" data-react-helmet="true" content="video/mp4">
+      <meta name="twitter:image" content="https://i.imgur.com/rofHxTbh.gif"/>
+      <meta name="twitter:image:src" content="https://i.imgur.com/rofHxTbh.gif"/>
+      <meta name="twitter:card" content="summary_large_image"-->
+      <meta property="og:url" content="https://imgur.com/rofHxTb">
+      <meta property="og:type" content="video"/>
+      <meta property="og:image" content="https://i.imgur.com/rofHxTb.gif"/>
+      <meta property="og:video" content="https://i.imgur.com/rofHxTb.gifv"/>
+      <meta property="og:video:type" content="video/mp4"/>
+	</head>
+	<body>
+	<main id="main"></main>
+		<script>	
+		var mainVidTmpl = `<section class="content" id="videocon">
+				<video id="mainVid" autoplay width="320" height="480" preload="metadata" loop poster="#" class="hvideo">
+					<source src="#" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+				<div onclick='playMe()' class="overly"></div>
+			</section>			
+		<section class="content">
+			<div class="player-controls">
+                <div class="play-duration">
+                    <div class="play-duration-bar"></div>
+                </div>
+				<div class="buttonbar">
+					<button class="saveBtn  btn" id="share" title="Share button" onclick="navigator.clipboard.writeText(window.location.href);">Share</button>
+                </div>
+            </div>
+			</section>`;
+		document.getElementById("main").innerHTML = mainVidTmpl;
+		let params = new URLSearchParams(document.location.search);
+		let paramname = params.get("value");
+		document.getElementsByTagName('source')[0].src="https://i.imgur.com/"+paramname+".mp4#t=0.01";	
+		</script>
+		<script src="/static/dynamic/player.js" type="module"></script>
+		<script>
+			var video = document.getElementById("mainVid");
+			video.muted = true;
+			function playMe() {
+				if (video.paused) {   // play the file, and display pause symbol 
+					video.play(); 
+				} else {              // pause the file, and display play symbol   
+					video.pause(); 
+				} 
+			};
+			function mute() {
+				if (video.muted) { 
+					video.muted = false; 
+				} else { 
+					video.muted = true; 
+				} 
+		};
+		</script>
+	</body>
+</html>
