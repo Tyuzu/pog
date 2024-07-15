@@ -130,7 +130,7 @@ async function uploadMultiple(formData) {
 //~ }
 
 function renderPixcs( what, where, whens, whene, whenst, whenet, eventid, eventtype, eventcategory, eventdesc) {
-	document.getElementById("main").innerHTML = `<p>What : ${what}, <br>Where : ${where}, <br>Whens : ${whens}, <br>Whene : ${whene}, <br>Whenst : ${whenst}, <br>Whenet : ${whenet}, <br>Event Type : ${eventtype}, <br>Category : ${eventcategory}, <br>Description : ${eventdesc}, <br><a href='//atapi-vatapi.netlify.app/event?eventid=${eventid}'>Go to link</a></p>`;
+	document.getElementById("main").innerHTML = `<p>What : ${what}, <br>Where : ${where}, <br>Whens : ${whens}, <br>Whene : ${whene}, <br>Whenst : ${whenst}, <br>Whenet : ${whenet}, <br>Event Type : ${eventtype}, <br>Category : ${eventcategory}, <br>Description : ${eventdesc}, <br><a href='/event?eventid=${eventid}'>Go to link</a></p>`;
 };
 
 

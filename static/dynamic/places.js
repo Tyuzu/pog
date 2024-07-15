@@ -116,7 +116,7 @@ function renderPlace(obj) {
     //~ vid.setAttribute('class',"PostPreviewImageView_post_image__zLzXH");
     post.setAttribute('target',"_blank");
     post.setAttribute('rel'," noopener noreferrer");
-    post.href = "//atapi-vatapi.netlify.app/place?placeid=" + obj.placeid;
+    post.href = "/place?placeid=" + obj.placeid;
 	post.innerHTML = "Open Link in new tab"
 	gl.appendChild(post);
 }
